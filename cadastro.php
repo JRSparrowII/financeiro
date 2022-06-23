@@ -1,11 +1,24 @@
 <?php 
-include_once("templates/header.php");
+// include_once("./templates/header.php");
+// include_once('./templates/footer.php');
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/cadastro.css">
+        <title>Cadastrar</title>
+    </head>
+    <body></body>
+</html>
+
 <div class="container">
-    <!-- <?php include_once("templates/backbtn.php"); ?> -->
+    <?php include_once("templates/backbtn.php"); ?>
     <h1 id="main-title">Cadastrar Transação</h1>
-    <form id="create-form" action="<?= $BASE_URL ?>registrodiario.php" method="POST">
+    <form id="create-form" action="<?= $BASE_URL ?>index.html" method="POST">
       <input type="hidden" name="type" value="create">
 
       <div class="form-group">

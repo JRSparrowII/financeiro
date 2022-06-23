@@ -2,13 +2,8 @@
     if(isset($_POST["usuario"])){
         $usuario = $_POST["usuario"];
         $senha = $_POST["senha"];
-
-        echo $usuario . "<br>";
-        echo $senha;
     }
-
 ?>
-
 
 <!doctype html>
 <html>
@@ -18,7 +13,7 @@
         
         <!-- estilo -->
         <!-- <link href="_css/estilo.css" rel="stylesheet"> -->
-        <link href = "_css/login.css" rel="stylesheet">
+        <link href = "./css/login.css" rel="stylesheet">
         
     </head>
 
@@ -29,7 +24,7 @@
                     <h2>Tela de Login</h2>
                     <input type="text" name= "usuario" placeholder = "Usuário">
                     <input type="password" name= "senha" placeholder = "Senha">
-                    <input type="submit" value = "login">
+                    <input type="submit" value = "Login">
                 </form>
             </div>
         </main>

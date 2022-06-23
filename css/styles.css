@@ -1,150 +1,3 @@
-* {
-    padding:0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: #f0f2f5;
-}
-
-body, input, button {
-    font-family: 'Poppins', sans-serif;
-}
-
-.conteudo-cabecalho{
-    background-color:#29abcc;   
-}
-
-.conteudo-cabecalho .cabecalho-centro{
-    max-width: 1120px;
-    margin: 0 auto;
-    display: flex; 
-    justify-content: space-between;
-    padding: 72px 16px 160px;
-}
-
-.conteudo-cabecalho .cabecalho-centro .btn{
-    background-color: #33bbff;
-    height: 48px;
-    width: 195px;
-    border-radius: 5px;
-    border: 0;
-    cursor: pointer;
-    color: #fff;
-    font-size: 16px;
-}
-
-.principal {
-    /* background-color: red; */
-    /* max-width: 1000px; */
-    padding-top: 32px;
-    padding-right: 16px;
-    padding-bottom: 32px;
-    padding-left: 16px;
-    max-width: 1120px;
-    margin: 0 auto;
-}
-
-/* RELATORIOS */
-
-.titulos {
-text-align: center;
-color: #BD2130;
-}
-
-.principal-ajustada{
-  /* background-color: red; */
-  /* max-width: 1000px; */
-  padding-top: 72px;
-  padding-right: 36px;
-  padding-bottom: 72px;
-  padding-left: 36px;
-  max-width: 1500px;
-  height: 50px;
-  margin: 0 auto;
-}
-
-.cabecalho-ativo-passivo{
-  color: white;
-  text-align: center;
-  font-size: 24px;
-  margin-left: 30px;
-  padding-left: 12px;
-}
-
-
-
-.secundaria {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
-    margin-top: -120px;
-}
-
-.item-card {
-    background-color: #fff;
-    padding: 28px 32px 28px 32px;
-    /* padding: 44px 48px 44px 48px; */
-    border-radius: 5px;
-    color: #363F5F;
-}
-
-.item-card div {
-    /* background-color: red; */
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-}
-
-.item-card strong {
-    font-size: 32px;
-    font-weight: 500;
-    margin-top: 16px;
-    display: block;
-}
-
-.item-card.colortotal {
-    background-color: #33cc95;
-    color: #fff;
-}
-
-.conteudo-tabela {
-    margin-top: 44px;
-}
-
-.conteudo-tabela table {
-    width: 100%;
-    border-spacing: 0 0.5rem;
-}
-
-.conteudo-tabela table thead th  {
-    color: #969696;
-    font-weight: 400;
-    text-transform: uppercase;
-    /* background-color: aqua; */
-    padding: 16px 32px 16px 32px;
-    text-align: left;
-    font-size: 16px;
-    line-height: 24px;
-}
-
-.conteudo-tabela table tbody td  {
-    background-color: #fff;    
-    padding: 16px 32px 16px 32px;
-    font-size: 16px;
-    color: #363f5f;    
-}
-
-.conteudo-tabela table .cor-entrada {
-    color: #33cc95;
-}
-
-.conteudo-tabela table .cor-saida {
-    color: #e52e4d;
-}
-
-
 /* HEADER */
 .navbar-brand img {
     width: 500px;
@@ -157,12 +10,12 @@ color: #BD2130;
   
   #main-title {
     text-align: center;
-    margin: 55px 0 50px;
+    margin: 90px 0 50px;
   }
   
   /* HOME */
   #contacts-table {
-    max-width: 800px;
+    max-width: 1800px;
     margin: 0 auto;
   }
   
@@ -190,7 +43,7 @@ color: #BD2130;
   }
   
   .edit-icon {
-    color: #007BFF;
+    color: red;
   }
   
   .delete-form {
@@ -221,42 +74,3 @@ color: #BD2130;
     margin: 0 auto;
     margin-top: 30px;
   } */
-  
-  /* SHOW / CONTATO INDIVIDUAL */
-  #view-contact-container {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .bold {
-    font-weight: bold;
-  }
-  
-  #back-link-container {
-    display: block;
-    width: 500px;
-    margin: 30px auto 0;
-  }
-  
-  #back-link {
-    border: 1px solid #007BFF;
-    color: #007BFF;
-    border-radius: 4px;
-    padding: 5px;
-  } */
-  
-  #back-link:hover {
-    text-decoration: none;
-  }
-  
-  /* CREATE */
-  #create-form,
-  #edit-form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  #main-title {
-    text-align: right;
-    margin: 55px 0 50px;
-  }
