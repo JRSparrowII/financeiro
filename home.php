@@ -7,6 +7,10 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>Aqui sera o Dashboard</h1>
+        <h1>Aqui sera o Dashboards</h1>
+        <!-- <a href = 'seu URL aqui'>
+            <img src = './assets/dash.svg'/>
+        </a> -->
+        
     </body>
 </html>
