@@ -1,5 +1,5 @@
 /* SHOW / CONTATO INDIVIDUAL */
-#view-contact-container {
+/* #view-contact-container {
     max-width: 500px;
     margin: 0 auto;
 }
@@ -17,9 +17,8 @@
  
 #back-link-container {
     display: block;
-    width: 500px;
-    margin: 30px auto 0;
-    background-color: #BD2130;
+    width: 50px;
+    margin: 50px auto 0; 
 }
 
 #back-link {
@@ -28,18 +27,3 @@
     border-radius: 4px;
     padding: 5px;
 } */
-  
-
-
-
- 
-/* HEADER */
-.navbar-brand img {
-    width: 500px;
-}
-
-.blackbtn {
-    background-color: blue;
-    color: #BD2130;
-}
-

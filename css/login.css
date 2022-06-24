@@ -11,7 +11,7 @@ main div#janela_login form {
 
 main div#janela_login form h2  {
     font-family: sans-serif;
-    color:#C5996B;
+    color:#3074b4;
 }
 
 main div#janela_login form p {
@@ -29,7 +29,7 @@ main div#janela_login form p {
 main div#janela_login form input[type="text"] {
     width:280px;
     padding:10px;
-    border:1px solid #CDC99B;
+    border:1px solid #3074b4;;
     border-radius: 5px;
     outline: none;
 }
@@ -38,7 +38,7 @@ main div#janela_login form input[type="password"] {
     width:280px;
     padding:10px;
     margin-top:15px;
-    border:1px solid #CDC99B;
+    border:1px solid #3074b4;;
     border-radius: 5px;
     outline: none;
 }
@@ -50,7 +50,7 @@ main div#janela_login form input[type="submit"] {
     color: #FFF;
     border:0;
     border-radius: 5px;
-    background-color: #C5996B;
+    background-color: #3074b4;;
     outline: none;
     cursor: pointer;
 }
