@@ -1,8 +1,3 @@
-<?php 
-// include_once("./templates/header.php");
-include_once('./templates/footer.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +12,11 @@ include_once('./templates/footer.php');
 </html>
 
 <div class="container">
-    <?php include_once("templates/backbtn.php"); ?>
+    <?php 
+    // include_once("templates/backbtn.php");
+    include_once("./templates/header.php");    
+    ?>
+    
     <h1 id="main-title">Cadastrar Transação</h1>
     <form id="create-form" action="<?= $BASE_URL ?>index.html" method="POST">
       <input type="hidden" name="type" value="create">
@@ -51,10 +50,11 @@ include_once('./templates/footer.php');
       </div>
 
       <div class="form-group">
-        <label for="historico">Historico:</label>
+        <label for="historico">Histórico:</label>
         <textarea type="text" class="form-control" id="historico" name="historico" placeholder="Digite o historico da movimentação" rows="6"></textarea>
       </div>
       <!-- COLOCAR O BOTAO PARA FUNCIONAR E MANDAR OS DADOS PARA O registrodiario -->
       <input type="submit" class="btn btn-primary">
     </form>
+    <?php include_once('./templates/footer.php'); ?>
   </div>

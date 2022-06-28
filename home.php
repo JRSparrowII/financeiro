@@ -1,3 +1,12 @@
+<?php 
+
+
+// if usuario e senha da sessao existir
+// ok, significal que estou autenticado e posso mostrar essa pagina
+
+//se nao existir sessao eu redireciona para login
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

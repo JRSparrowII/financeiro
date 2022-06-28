@@ -1,5 +1,5 @@
 <?php
-  include_once('../config/url.php');
+  // include_once('../config/url.php');
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
           <a class="nav-link active" href="<?= $BASE_URL ?>cadastro.php">Cadastrar Transação</a>
           <a class="nav-link active" href="<?= $BASE_URL ?>relatorios/balanco.html">Relatorios
             <a class="nav-link active" href="<?= $BASE_URL ?>relatorios/balanco.html">Balanco</a>
-            <a class="nav-link active" href="<?= $BASE_URL ?>relatorios/balanco.html">Balancete</a>
+            <a class="nav-link active" href="<?= $BASE_URL ?>relatorios/balancete.html">Balancete</a>
           </a>
           <a class="nav-link active" href="<?= $BASE_URL ?>cadastro.php">Cadastro</a>
         </div>

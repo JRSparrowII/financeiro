@@ -1,5 +1,5 @@
 </body> 
     <footer>
-        <p>Sistema de Contabilidade Pessoal 2022</p>
+        <p class = "rodape">Sistema de Contabilidade Pessoal 2022</p>
     </footer>   
 </html>
