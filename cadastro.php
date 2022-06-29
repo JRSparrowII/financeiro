@@ -1,3 +1,24 @@
+<?php  
+  include("./templates/header.php"); 
+
+  if(!isset($_SESSION["portal_usuario"])){
+    header("Location: login.php");
+  }
+   
+  require_once("./config/conexao.php");
+  $debitos_conta = "SELECT conta FROM plano_contas";
+  $linha_debitos = mysqli_query($conecta, $debitos_conta);
+  if(!$linha_debitos){
+    die("Erro no banco");
+  }  
+  
+  $creditos_conta = "SELECT conta FROM plano_contas";
+  $linha_creditos = mysqli_query($conecta, $creditos_conta);
+  if(!$linha_creditos){
+    die("Erro no banco");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,49 +33,55 @@
 </html>
 
 <div class="container">
-    <?php 
-    // include_once("templates/backbtn.php");
-    include_once("./templates/header.php");    
-    ?>
+
+  <h1 id="main-title">Cadastrar Transação</h1>
+  <form action = "index.php" method="POST">
+    <input type="hidden" name="type" value="cadastrar">
+
+    <div class="form-group">
+      <label for="data_transacao">Data da Transação:</label>
+      <input type="date" class="form-control" name="data_transacao" placeholder="Digite a data em que foi realizada a transação" required>
+    </div>
     
-    <h1 id="main-title">Cadastrar Transação</h1>
-    <form id="create-form" action="<?= $BASE_URL ?>index.html" method="POST">
-      <input type="hidden" name="type" value="create">
+    <div class="form-group">
+      <label for="debito">Débito:</label>
+      <select name="debito" class="form-control" placeholder = "Tipo da conta debito" required autofocus>
+        <?php while($linha = mysqli_fetch_assoc($linha_debitos)){ ?>
+          <option value = "1">
+          <?php echo $linha["conta"] ?>
+          </option>         
+        <?php } ?>                    
+      </select>        
+    </div>
 
-      <div class="form-group">
-        <label for="dataRegistro">Data da Transação:</label>
-        <input type="date" class="form-control" id="dataRegistro" name="dataRegistro" placeholder="Digite a data em que foi realizada a transação" required>
-      </div>
+    <div class="form-group">
+      <label for="valor_debito">Valor do Débito:</label>
+      <input type="float" class="form-control" name="valor_debito" placeholder="Informe o valor" required>
+    </div>
 
-      <div class="form-group">
-        <label for="debito">Débito:</label>
-        <input type="text" list="planoContas" class="form-control" id="debito" name="debito" placeholder="Informe a conta" required autofocus>
-        <datalist id="planoContas">
-          <option value = "Banco">Banco</option>
-          <option value = "Caixa">Caixa</option>
-      </div>
+    <div class="form-group">
+      <label for="credito">Crédito:</label>
+      <select name="credito" class="form-control" placeholder = "Tipo da conta credito" required autofocus>
+        <?php while($linha = mysqli_fetch_assoc($linha_creditos)){ ?>
+          <option value = "1">
+          <?php echo $linha["conta"] ?>
+          </option>         
+        <?php } ?>                    
+      </select>         
+    </div>
 
-      <div class="form-group">
-        <label for="valorDebito">Valor do Débito:</label>
-        <input type="text" class="form-control" id="valorDebito" name="valorDebito" placeholder="Informe o valor" required>
-      </div>
+    <div class="form-group">
+      <label for="valor_credito">Valor do Crédito:</label>
+      <input type="float" class="form-control" name="valor_credito" placeholder="Informe o valor" required>
+    </div>
 
-      <div class="form-group">
-        <label for="credito">Crédito:</label>
-        <input type="text" class="form-control" id="credito" name="credito" placeholder="Informe a conta" required>
-      </div>
+    <div class="form-group">
+      <label for="historico">Histórico:</label>
+      <textarea type="text" class="form-control" name="historico" placeholder="Digite o historico da movimentação" rows="6"></textarea>
+    </div>
+    <!-- COLOCAR O BOTAO PARA FUNCIONAR E MANDAR OS DADOS PARA O registrodiario -->
+    <input type="submit" class="btn btn-primary">
+  </form>
 
-      <div class="form-group">
-        <label for="valorCredito">Valor do Crédito:</label>
-        <input type="text" class="form-control" id="valorCredito" name="valorCredito" placeholder="Informe o valor" required>
-      </div>
-
-      <div class="form-group">
-        <label for="historico">Histórico:</label>
-        <textarea type="text" class="form-control" id="historico" name="historico" placeholder="Digite o historico da movimentação" rows="6"></textarea>
-      </div>
-      <!-- COLOCAR O BOTAO PARA FUNCIONAR E MANDAR OS DADOS PARA O registrodiario -->
-      <input type="submit" class="btn btn-primary">
-    </form>
-    <?php include_once('./templates/footer.php'); ?>
-  </div>
+  <?php include('./templates/footer.php'); ?>
+</div>

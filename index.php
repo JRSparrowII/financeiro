@@ -1,4 +1,7 @@
-<?php include_once("./templates/header.php");?>
+<?php     
+    include("./templates/header.php");    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +20,12 @@
     <div class="conteudo-cabecalho">
         <div class="cabecalho-centro">
             <img src="./assets/logo.svg" alt="">
-
-            <button class="btn">
-                Nova Transação                
-            </button>
+            
+            <form action="cadastro.php" method="post">
+                <button class="btn">
+                    Nova Transação                
+                </button>
+            </form>
         </div>   
     </div>
     <div class="principal" >
@@ -103,4 +108,5 @@
     </div>   
 </body>
 </html>
+
 

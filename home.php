@@ -1,10 +1,15 @@
 <?php 
+    include("./templates/header.php");  
+    // Proteção de paginas
+        
+    if(!isset($_SESSION["portal_usuario"])){
+        header("Location: login.php");
+    }
 
-
-// if usuario e senha da sessao existir
-// ok, significal que estou autenticado e posso mostrar essa pagina
-
-//se nao existir sessao eu redireciona para login
+    // if usuario e senha da sessao existir
+    // ok, significal que estou autenticado e posso mostrar essa pagina
+    //se nao existir sessao eu redireciona para login
+    // echo $_SESSION["portal_usuario"];
 ?>
 
 <!DOCTYPE html>
