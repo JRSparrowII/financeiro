@@ -1,20 +1,45 @@
+*{
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
 /* estilos da pesquisa */
 main div#janela_login {
-    width:860px;
-    margin:100px auto 30px;
+    width:400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF;
+    padding: 5px 30px 20px;
+    margin-top: 15vh;
+    border-radius: 8px;
+    text-align: center;    
 }
 
+/* CORPO DA TELA DE LOGIN */
 main div#janela_login form {
-    width:470px;
-    margin:10px auto;
+    width:400px;
+    height: 250px;
+    margin-top:30px;
+    margin-bottom: 40px;
+    /* background-color: #F00; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* CABECALHO DA TELA DE LOGIN */
 main div#janela_login form h2  {
     font-family: sans-serif;
+    text-transform: uppercase;
+    text-align: center;
     color:#3074b4;
+    /* background-color: blue; */
+    margin-top: 10px;
 }
 
-main div#janela_login form p {
+/* main div#janela_login form p {
     font-family: sans-serif;
     font-size: 12px;
     font-weight: 500;
@@ -24,34 +49,79 @@ main div#janela_login form p {
     border-radius: 5px;
     width:120px;
     text-align: center;
-}
+    background-color: aquamarine;
+} */
 
+/* LABEL USUARIO */
 main div#janela_login form input[type="text"] {
-    width:280px;
+    width:320px;
     padding:10px;
-    border:1px solid #3074b4;;
+    border:1px solid #08558b;;
     border-radius: 5px;
-    outline: none;
+    outline: none;    
 }
 
+/* LABEL SENHA */
 main div#janela_login form input[type="password"] {
-    width:280px;
+    width:320px;
     padding:10px;
-    margin-top:15px;
-    border:1px solid #3074b4;;
+    margin-top:20px;
+    border:1px solid #08558b;;
     border-radius: 5px;
     outline: none;
 }
 
+/* BOTÃO DE LOGIN */
 main div#janela_login form input[type="submit"] {
-    display: block;
-    padding:10px 20px;
-    margin-top:15px;
+    text-align: center;
+    /* font-family: 'Trebuchet MS';   */
+    font: bold; 
+    height: 40px;
+    width: 320px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;    
+    margin-top:30px;
     color: #FFF;
     border:0;
-    border-radius: 5px;
-    background-color: #3074b4;;
-    outline: none;
+    border-radius: 20px;
+    background-color: #08558b;    
     cursor: pointer;
 }
+
+main div#janela_login form input[type="submit"]:hover {
+background-color:#1b223c;
+transition: .5s;
+}
+
+input:focus{
+    border-bottom: 2px solid red;
+}
+
+#social-container{
+    margin-bottom: 20px;
+    /* font-family: 'Trebuchet MS';   */
+}
+
+.forgot-pass{
+    text-align: right;
+    display: block;
+    margin-top:0px;
+    width: 10px;
+    height: 10px;
+    color: red;
+}
+
+#register-container{
+    margin-bottom: 20px;
+    /* font-family: 'Trebuchet MS';   */
+}
+
+/* IMAGEM DE FUNDO */
+body{
+    background-image: url(../../financeiro/assets/financeiro.jpg);
+    background-size: cover;
+    background-position-y: -50px;
+}
+
 /* fim do estilo da pesquisa */

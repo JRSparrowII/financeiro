@@ -21,12 +21,11 @@
             // $_SESSION["usuario_logado"] = true;
             header('Location: home.php');
        } else {
+            echo "<script>alert('Usuário/senha inválidos')</script>";
             
-            echo "Usuário/senha inválidos";
        }
        
     }
-
     
 ?>
 
@@ -34,23 +33,34 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Tela de Login</title>
+        <title>Login</title>
         
         <!-- estilo -->
         <!-- <link href="_css/estilo.css" rel="stylesheet"> -->
         <link href = "./css/login.css" rel="stylesheet">
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/login.css">
     </head>
 
     <body>       
         <main>  
             <div id= "janela_login">
                 <form action="login.php" method = "post">
-                    <h2>Tela de Login</h2>
+                    <h2>Sistema de Contabilidade Pessoal</h2>
                     <input type="text" name= "usuario" placeholder = "Usuário">
                     <input type="password" name= "senha" placeholder = "Senha">
-                    <input type="submit" value = "Login">                      
+                    <input type="submit" value = "Login">                                        
                 </form>
+                <div id= "social-container">
+                    <a href="#" id = "forgot-pass">Esqueceu a senha?</a>
+                    <!-- <p>Ou entre pela suas redes sociais</p>
+                    <i class = "fa fa-facebook-f"></i> -->
+                </div>
+                <div id = "register-container">
+                    <p>Ainda não tem uma conta?</p>
+                    <a href="#">Cadastre-se</a>
+
+                </div>
             </div>
         </main>
     </body>

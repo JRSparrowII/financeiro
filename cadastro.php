@@ -17,6 +17,11 @@
   if(!$linha_creditos){
     die("Erro no banco");
   }
+
+  // INSERÇÃO NO BANCO DE DADOS
+  if(isset($_POST["debito"])){
+    print_r($_POST);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +31,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/cadastro.css">
+        <!-- LINK BOOTSTRAP REMOTO -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
         <title>Cadastrar</title>
     </head>
@@ -80,7 +87,7 @@
       <textarea type="text" class="form-control" name="historico" placeholder="Digite o historico da movimentação" rows="6"></textarea>
     </div>
     <!-- COLOCAR O BOTAO PARA FUNCIONAR E MANDAR OS DADOS PARA O registrodiario -->
-    <input type="submit" class="btn btn-primary">
+    <input type="submit" class="btn btn-primary btn-block">
   </form>
 
   <?php include('./templates/footer.php'); ?>

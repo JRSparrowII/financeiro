@@ -12,6 +12,35 @@
     text-align: center;
     margin: 90px 0 50px;
   }
+
+.container{
+  /* padding-top: 64px; */
+  /* text-align: center; */
+  align-items: center;
+}
+
+#header_saudacao {
+  /* display: flex;
+  justify-content: end;
+  color: #fff; */
+}
+
+
+#header_saudacao  h5 {
+  color: #fff !important;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* .container.dropdown{
+
+}
+
+.btn btn-primary dropdown-toggle{
+  background-color:red;
+} */
+
   
   /* HOME */
   /* #contacts-table {

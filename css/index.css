@@ -3,6 +3,7 @@
     padding:0;
     margin: 0;
     box-sizing: border-box;
+    /* font-family: sans-serif; */
 }
 
 body{
@@ -14,7 +15,8 @@ body, input, button {
 }
 
 .conteudo-cabecalho{
-    background-color:#29abcc;   
+    background-color:#29abcc; 
+    /* background-color:red;    */
 }
 
 .conteudo-cabecalho .cabecalho-centro{
@@ -22,7 +24,7 @@ body, input, button {
     margin: 0 auto;
     display: flex; 
     justify-content: space-between;
-    padding: 72px 16px 160px;
+    padding: 36px 16px 80px;
 }
 
 .conteudo-cabecalho .cabecalho-centro .btn{
@@ -51,7 +53,7 @@ body, input, button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
-    margin-top: -120px;
+    margin-top: -80px;
 }
 
 .item-card {
