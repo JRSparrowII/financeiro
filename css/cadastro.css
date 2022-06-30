@@ -1,6 +1,6 @@
 /* SHOW / CONTATO INDIVIDUAL */
 #view-contact-container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -11,7 +11,7 @@
 }
 
 /* BOTAO VOLTAR   */
-#back-link:hover {
+/* #back-link:hover {
     text-decoration: none;
 }
  
@@ -26,4 +26,12 @@
     color: #007BFF;
     border-radius: 4px;
     padding: 5px;
-} */
+} */ */
+
+.btn btn-outline-dark{
+    justify-content: end;
+}
+
+.container{
+    background-color: #dfe9f2;
+}

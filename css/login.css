@@ -91,7 +91,7 @@ main div#janela_login form input[type="submit"] {
 
 main div#janela_login form input[type="submit"]:hover {
 background-color:#1b223c;
-transition: .5s;
+transition: .2s;
 }
 
 input:focus{

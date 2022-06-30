@@ -1,10 +1,13 @@
 <?php  
   include("./templates/header.php"); 
+  require_once("./config/conexao.php");
+
 
   if(!isset($_SESSION["portal_usuario"])){
     header("Location: login.php");
   }
    
+  // CAIXA DE OPÇÕES DOS CAMPOS DEBITO E CREDITO
   require_once("./config/conexao.php");
   $debitos_conta = "SELECT conta FROM plano_contas";
   $linha_debitos = mysqli_query($conecta, $debitos_conta);
@@ -18,10 +21,7 @@
     die("Erro no banco");
   }
 
-  // INSERÇÃO NO BANCO DE DADOS
-  if(isset($_POST["debito"])){
-    print_r($_POST);
-  }
+  
 ?>
 
 <!DOCTYPE html>
@@ -41,9 +41,12 @@
 
 <div class="container">
 
-  <h1 id="main-title">Cadastrar Transação</h1>
-  <form action = "index.php" method="POST">
-    <input type="hidden" name="type" value="cadastrar">
+  <h1 id="main-title">Cadastrar Transação
+  <button type="button" class="btn btn-outline-dark" a hef = "index.php">Voltar</button>
+  </h1>
+
+  <form action="salvar_transacao.php" method="POST">
+    <!-- <input type="hidden" name="submit" value="cadastrar"> -->
 
     <div class="form-group">
       <label for="data_transacao">Data da Transação:</label>
@@ -87,7 +90,8 @@
       <textarea type="text" class="form-control" name="historico" placeholder="Digite o historico da movimentação" rows="6"></textarea>
     </div>
     <!-- COLOCAR O BOTAO PARA FUNCIONAR E MANDAR OS DADOS PARA O registrodiario -->
-    <input type="submit" class="btn btn-primary btn-block">
+    <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block">
+   
   </form>
 
   <?php include('./templates/footer.php'); ?>

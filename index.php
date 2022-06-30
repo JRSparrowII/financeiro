@@ -1,5 +1,11 @@
 <?php     
-    include("./templates/header.php");    
+    include("./templates/header.php");   
+    include_once("./config/conexao.php"); 
+
+    $consulta = "SELECT * FROM  transacoes ORDER BY id_transacao desc";
+    $resultado = $conecta->query($consulta);
+    // print_r($resultado);
+   
 ?>
 
 <!DOCTYPE html>
@@ -32,21 +38,21 @@
         <div class="secundaria" >
             <div class="item-card">
                 <div>
-                    <p>Entradas</p>
+                    <p>Débitos</p>
                     <img src="./assets/income.svg" alt="">
                 </div>
                 <strong>R$ 1000,00</strong>
             </div>
             <div class="item-card">
                 <div>
-                    <p>Saída</p>
+                    <p>Créditos</p>
                     <img src="./assets/outcome.svg" alt="">
                 </div>
                 <strong>R$ 1000,00</strong>
             </div>
             <div class="item-card colortotal">
                 <div>
-                    <p>Total</p>
+                    <p>Saldo</p>
                     <img src="./assets/total.svg" alt="">
                 </div>
                 <strong>R$ 1000,00</strong>
@@ -62,46 +68,37 @@
                         <th>Valor do Débito</th>
                         <th>Crédito</th>
                         <th>Valor do Crédito</th>
-                        <th>Histórico</th>
+                        <th>Histórico de Transações</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>10/05/2022</td>
-                        <td>Caixa</td>
-                        <td class="cor-entrada">1000</td>
-                        <td>Salário</td>
-                        <td class="cor-saida">-500</td>
-                        <td>Valor referente a salário do mês</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>12/05/2022</td>
-                        <td>Compras e Supermercado</td>
-                        <td class="cor-entrada">50</td>
-                        <td>Caixa</td>
-                        <td class="cor-saida">-50</td>
-                        <td>Valor referente a compra de queijo e presunto</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>15/05/2022</td>
-                        <td>Cabelereiro</td>
-                        <td class="cor-entrada">20</td>
-                        <td>Caixa</td>
-                        <td class="cor-saida">-20</td>
-                        <td>Valor referente a corte de cabelo </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>17/05/2022</td>
-                        <td>Brincadeiras e Festas</td>
-                        <td class="cor-entrada">100</td>
-                        <td>Caixa</td>
-                        <td class="cor-saida">-100</td>
-                        <td>Valor referente a pizza com a familia</td>
-                    </tr>
+                    <?php 
+                        while($user_data = mysqli_fetch_assoc($resultado)){
+                            echo "<tr>";
+                            echo "<td>" .$user_data['id_transacao']."</td>";
+                            echo "<td>" .$user_data['data_transacao']."</td>";
+                            echo "<td>" .$user_data['debito']."</td>";
+                            echo "<td>" .$user_data['valor_debito']."</td>";
+                            echo "<td>" .$user_data['credito']."</td>";
+                            echo "<td>" .$user_data['valor_credito']."</td>";
+                            echo "<td>" .$user_data['historico']."</td>";
+                            echo "<td>
+                                <a class = 'btn btn-sm btn-primary' href='edit.php?id=$user_data[id_transacao]'>
+                                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
+                                    <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
+                                    <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
+                                    </svg>
+                                </a>
+                                <a class = 'btn btn-sm btn-danger' href='excluir.php? id= $user_data[id_transacao]'>
+                                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash-fill' viewBox='0 0 16 16'>
+                                    <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
+                                    </svg>
+                                </a>
+                            </td>"; 
+                            echo "</tr>";                           
+                        }
+                    ?>                    
                 </tbody>
               </table>
         </div>
