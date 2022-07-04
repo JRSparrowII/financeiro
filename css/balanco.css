@@ -5,22 +5,3 @@
     color: #BD2130;
     }
     
-    .principal-ajustada{
-      /* background-color: red; */
-      /* max-width: 1000px; */
-      padding-top: 72px;
-      padding-right: 36px;
-      padding-bottom: 72px;
-      padding-left: 36px;
-      max-width: 1500px;
-      height: 50px;
-      margin: 0 auto;
-    }
-    
-    .cabecalho-ativo-passivo{
-      color: black;
-      text-align: center;
-      font-size: 24px;
-      margin-left: 30px;
-      padding-left: 12px;
-    }

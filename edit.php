@@ -1,6 +1,4 @@
 <?php  
-
-
   include("./templates/header.php");
   require_once("./config/conexao.php");
 
@@ -26,25 +24,22 @@
     print_r($_POST);
   }
 
-  // PUXANDO DADOS PARA EDIÇÃO NO BANCO
-  if(!empty($_GET['id'])){
-    $id_edit = $_GET['id'];
-    $sqlSelect = "SELECT * FROM transacoes WHERE id_transacao = $id_edit";
-    $resultado = $conecta->query($sqlSelect);
-    
-    if($resultado->num_rows > 0){
-      while($user_data = mysqli_fetch_assoc($resultado)){
-        $data_transacao = $user_data['data_transacao'];
-        $debito = $user_data['debito'];
-        $valor_debito = $user_data['valor_debito'];
-        $credito = $user_data['credito'];
-        $valor_credito = $user_data['valor_credito'];
-        $historico = $user_data['historico'];
-      }           
+  // PUXANDO DADOS PARA EDIÇÃO NO BANCO OPÇÃO 1
+    $trans = "SELECT * FROM transacoes";
+    if(isset($_GET['id'])){
+      $id = $_GET['id'];
+      $trans .= "WHERE id_transacao = {$id}";      
+    } else {
+      $trans .= "WHERE id_transacao = 1";      
+    }
+
+    $consulta_trans = ($conecta, $trans);
+    if(!$consulta_trans){
+      die("Erro no Banco de Dados")
     } else{
-    header('location: index.php');
-    }       
-  }
+      $info_trans = mysqli_fetch_assoc($consulta_trans);
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -69,17 +64,18 @@
   </h1>
   
   
-  <form action = "index.php" method="POST">
+  <form action = "saveedit.php" method="POST">
     <input type="hidden" name="type" value="cadastrar">
 
     <div class="form-group">
       <label for="data_transacao">Data da Transação:</label>
-      <input type="date" class="form-control" name="data_transacao" value= "<?php echo $data_transacao?>" placeholder="Digite a data em que foi realizada a transação" required>
+      <input type="date" class="form-control" name="data_transacao" value= "<?php echo $info_trans['data_transacao']?>" placeholder="Digite a data em que foi realizada a transação" required>
+      <!-- <input type="date" class="form-control" name="data_transacao" value= "<?php echo $data_transacao?>" placeholder="Digite a data em que foi realizada a transação" required> -->
     </div>
     
     <div class="form-group">
       <label for="debito">Débito:</label>
-      <select name="debito" class="form-control" value= "<?php echo $debito?>" placeholder = "Tipo da conta debito" required autofocus>
+      <select name="debito" class="form-control" name="debito" value= "<?php echo $info_trans['debito']?>" placeholder = "Tipo da conta debito" required autofocus>
         <?php while($linha = mysqli_fetch_assoc($linha_debitos)){ ?>
           <option value = "1">
           <?php echo $linha["conta"] ?>
@@ -90,12 +86,12 @@
 
     <div class="form-group">
       <label for="valor_debito">Valor do Débito:</label>
-      <input type="float" class="form-control" name="valor_debito" value= "<?php echo $valor_debito?>" placeholder="Informe o valor" required>
+      <input type="float" class="form-control" name="valor_debito" value= "<?php echo $info_trans['valor_debito']?>" placeholder="Informe o valor" required>
     </div>
 
     <div class="form-group">
       <label for="credito">Crédito:</label>
-      <select name="credito" class="form-control" value= "<?php echo $credito?>" placeholder = "Tipo da conta credito" required autofocus>
+      <select name="credito" class="form-control" value= "<?php echo $info_trans['credito']?>" placeholder = "Tipo da conta credito" required autofocus>
         <?php while($linha = mysqli_fetch_assoc($linha_creditos)){ ?>
           <option value = "1">
           <?php echo $linha["conta"] ?>
@@ -106,12 +102,12 @@
 
     <div class="form-group">
       <label for="valor_credito">Valor do Crédito:</label>
-      <input type="float" class="form-control" name="valor_credito" value= "<?php echo $valor_credito?>" placeholder="Informe o valor" required>
+      <input type="float" class="form-control" name="valor_credito" value= "<?php echo $info_trans['valor_credito']?>" placeholder="Informe o valor" required>
     </div>
 
     <div class="form-group">
       <label for="historico">Histórico:</label>
-      <textarea type="text" class="form-control" name="historico" value= "<?php echo $historico?>" placeholder="Digite o historico da movimentação" rows="6"></textarea>
+      <textarea type="text" class="form-control" name="historico" value= "<?php echo $info_trans['historico']?>" placeholder="Digite o historico da movimentação" rows="6"></textarea>
     </div>
     <!-- COLOCAR O BOTAO PARA FUNCIONAR E MANDAR OS DADOS PARA O registrodiario -->
     <input type="hidden" name="id" value="<?php echo $id_edit?>" > 
