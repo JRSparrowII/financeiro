@@ -25,7 +25,7 @@
    <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
@@ -43,8 +43,7 @@
           }
           $saudacao_login = mysqli_fetch_assoc($saudacao_login);
           $nome = $saudacao_login["usuario"];
-      ?>
-        
+      ?>        
       <?php 
         }
       ?>
@@ -72,7 +71,7 @@
         </div>
       </div>
       <div id = "header_saudacao">
-        <h5> Seja Bem-Vindo, <?php echo $nome?> | <a href="logout.php"> Sair </a></h5>
+        <h5> Seja Bem-Vindo, <?php echo $nome?> | <a href="logout.php"> Sair </a></h5>        
       </div>
     </div>
   </nav>

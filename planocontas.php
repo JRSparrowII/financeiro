@@ -1,5 +1,6 @@
 <?php 
     include("./templates/header.php");  
+    // require(".config/conexao.php");
        
     //Impedir usuário não logado de acessar essa página
     if(!isset($_SESSION["portal_usuario"])){
@@ -45,9 +46,11 @@
                     <div class="modal-body">
                         <div class="form-body-input">
                             <div class="input">
+                                <label for="">Classe da conta:</label>
                                 <input type="text" placeholder="Informe a Classe">
                             </div>
                             <div class="input">
+                                <label for="">Tipo de classe da conta:</label>
                                 <input type="text" placeholder="Informe o tipo de Classe">
                             </div>
 
@@ -68,14 +71,18 @@
                             </div> -->
                             
                             <div class="input">
+                                <label for="">Classificação da conta:</label>
                                 <input type="text" placeholder="Informe a Classificação">
                             </div>
                             <div class="input">
+                                <label for="">Conta:</label>
                                 <input type="text" placeholder="Informe a Conta">
                             </div>
-                            <div >
-                                <button class="btn-cadastrar">Cadastrar</button>
-                            </div>
+                            <form action="salvar_planocontas.php" method = "POST">
+                                <div >
+                                    <button class="btn-cadastrar">Cadastrar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <!-- <div class="modal-footer">

@@ -42,7 +42,7 @@
 <div class="container">
 
   <h1 id="main-title">Cadastrar Transação
-  <button type="button" class="btn btn-outline-dark" a hef = "index.php">Voltar</button>
+  <button type="button" class="btn btn-outline-dark" a hef = "index.php">>Voltar</button>
   </h1>
 
   <form action="salvar_transacao.php" method="POST">
@@ -57,7 +57,7 @@
       <label for="debito">Débito:</label>
       <select name="debito" class="form-control" placeholder = "Tipo da conta debito" required autofocus>
         <?php while($linha = mysqli_fetch_assoc($linha_debitos)){ ?>
-          <option value = "1">
+          <option value = "">
           <?php echo $linha["conta"] ?>
           </option>         
         <?php } ?>                    
@@ -73,7 +73,7 @@
       <label for="credito">Crédito:</label>
       <select name="credito" class="form-control" placeholder = "Tipo da conta credito" required autofocus>
         <?php while($linha = mysqli_fetch_assoc($linha_creditos)){ ?>
-          <option value = "1">
+          <option value = "">
           <?php echo $linha["conta"] ?>
           </option>         
         <?php } ?>                    
@@ -88,11 +88,8 @@
     <div class="form-group">
       <label for="historico">Histórico:</label>
       <textarea type="text" class="form-control" name="historico" placeholder="Digite o historico da movimentação" rows="6"></textarea>
-    </div>
-    <!-- COLOCAR O BOTAO PARA FUNCIONAR E MANDAR OS DADOS PARA O registrodiario -->
-    <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block">
-   
+    </div>    
+    <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block">   
   </form>
-
   <?php include('./templates/footer.php'); ?>
 </div>

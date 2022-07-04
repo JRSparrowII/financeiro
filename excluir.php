@@ -1,19 +1,18 @@
 <?php 
+    require_once("./config/conexao.php");
 
-    if(!empty($_GET['id'])){
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $tr = "SELECT * FROM transacoes WHERE id_transportadora = {$id}";
+        $consulta_tr = mysqli($conecta, $tr);
 
-        include_once("./config/conexao.php");
-        
-        $id_edit = $_GET['id'];
-        $sqlSelect = "SELECT * FROM transacoes WHERE id_transacao = $id_edit";
-        $resultado = $conecta->query($sqlSelect);
-        
-        if($resultado->num_rows > 0){
-            $sqlDelete = "DELETE * FROM transacoes WHERE id_transacao = $id_edit";
-            $resultadoDeletar = $conecta->query($sqlDelete);
-        }           
-        } else{
+        if(!$consulta_tr){
+            die("Erro no Banco de Dados");
+        }
+
+    } else{
         header('location: index.php');
-        }       
     }
+    $info_trans = mysqli_fetch_assoc($consulta_tr);    
+
 ?>
