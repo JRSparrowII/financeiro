@@ -9,13 +9,14 @@
    
   // CAIXA DE OPÇÕES DOS CAMPOS DEBITO E CREDITO
   require_once("./config/conexao.php");
-  $debitos_conta = "SELECT conta FROM plano_contas";
+  $debitos_conta = "SELECT * FROM plano_contas";
   $linha_debitos = mysqli_query($conecta, $debitos_conta);
+
   if(!$linha_debitos){
     die("Erro no banco");
   }  
   
-  $creditos_conta = "SELECT conta FROM plano_contas";
+  $creditos_conta = "SELECT * FROM plano_contas";
   $linha_creditos = mysqli_query($conecta, $creditos_conta);
   if(!$linha_creditos){
     die("Erro no banco");
@@ -57,7 +58,7 @@
       <label for="debito">Débito:</label>
       <select name="debito" class="form-control" placeholder = "Tipo da conta debito" required autofocus>
         <?php while($linha = mysqli_fetch_assoc($linha_debitos)){ ?>
-          <option value = "">
+          <option value="<?php echo $linha["id_classe"] ?>" >
           <?php echo $linha["conta"] ?>
           </option>         
         <?php } ?>                    
@@ -73,7 +74,7 @@
       <label for="credito">Crédito:</label>
       <select name="credito" class="form-control" placeholder = "Tipo da conta credito" required autofocus>
         <?php while($linha = mysqli_fetch_assoc($linha_creditos)){ ?>
-          <option value = "">
+          <option value = "<?php echo $linha["id_classe"] ?>">
           <?php echo $linha["conta"] ?>
           </option>         
         <?php } ?>                    

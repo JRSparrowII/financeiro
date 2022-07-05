@@ -45,40 +45,24 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-body-input">
-                            <div class="input">
-                                <label for="">Classe da conta:</label>
-                                <input type="text" placeholder="Informe a Classe">
-                            </div>
-                            <div class="input">
-                                <label for="">Tipo de classe da conta:</label>
-                                <input type="text" placeholder="Informe o tipo de Classe">
-                            </div>
-
-                            <!-- <div class="radio">
-                                    <input type="radio" id="entrada" name="tipo_movimentacao" value="entrada">                                
-                                    <label for="entrada">
-                                        <img src="./assets/income.svg" alt="">
-                                        <span>Entrada</span>                                
-                                    </label>                        
                             
-
-                                    <input type="radio" id="saida" name="tipo_movimentacao" value="saida"> 
-                                    <label for="saida">                                
-                                        <img src="./assets/outcome.svg" alt="">
-                                        <span>Saída</span>
-                                    </label>                               
-                                                    
-                            </div> -->
-                            
-                            <div class="input">
-                                <label for="">Classificação da conta:</label>
-                                <input type="text" placeholder="Informe a Classificação">
-                            </div>
-                            <div class="input">
-                                <label for="">Conta:</label>
-                                <input type="text" placeholder="Informe a Conta">
-                            </div>
                             <form action="salvar_planocontas.php" method = "POST">
+                                <div class="input">
+                                    <label for="">Classe da conta:</label>
+                                    <input type="text" placeholder="Informe a Classe" name="classe">
+                                </div>
+                                <div class="input">
+                                    <label for="">Tipo de classe da conta:</label>
+                                    <input type="text" placeholder="Informe o tipo de Classe" name="tipo_classe">
+                                </div>                                                            
+                                <div class="input">
+                                    <label for="">Classificação da conta:</label>
+                                    <input type="text" placeholder="Informe a Classificação">
+                                </div>
+                                <div class="input">
+                                    <label for="">Conta:</label>
+                                    <input type="text" placeholder="Informe a Conta">
+                                </div>
                                 <div >
                                     <button class="btn-cadastrar">Cadastrar</button>
                                 </div>
