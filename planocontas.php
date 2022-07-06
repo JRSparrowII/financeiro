@@ -57,11 +57,11 @@
                                 </div>                                                            
                                 <div class="input">
                                     <label for="">Classificação da conta:</label>
-                                    <input type="text" placeholder="Informe a Classificação">
+                                    <input type="text" placeholder="Informe a Classificação" name="classificacao">
                                 </div>
                                 <div class="input">
                                     <label for="">Conta:</label>
-                                    <input type="text" placeholder="Informe a Conta">
+                                    <input type="text" placeholder="Informe a Conta" name="conta">
                                 </div>
                                 <div >
                                     <button class="btn-cadastrar">Cadastrar</button>

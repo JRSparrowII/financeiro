@@ -1,26 +1,16 @@
 <?php 
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-exit;
-
-
-EXIT;
-
 // INSERÇÃO DAS INFORMAÇÕES NO BANCO DE DADOS
 // if (isset($_POST['submit'])) {   
     include("./config/conexao.php"); 
    
-    $data_transacao      = $_POST['data_transacao'];
-    $debito              = $_POST['debito'];
-    $valor_debito        = $_POST['valor_debito'];
-    $credito             = $_POST['credito'];
-    $valor_credito       = $_POST['valor_credito'];
-    $historico           = $_POST['historico'];
+    $classe        = $_POST['classe'];
+    $tipo_classe   = $_POST['tipo_classe'];
+    $classificacao = $_POST['classificacao'];
+    $conta         = $_POST['conta'];
 
-    $sql = "INSERT INTO transacoes(data_transacao, debito, valor_debito, credito, valor_credito, historico)
-    VALUES ( '$data_transacao', '$debito', '$valor_debito', '$credito', '$valor_credito','$historico')"; 
+    $sql = "INSERT INTO plano_contas (classe, tipo_classe, classificacao, conta)
+    VALUES ( '$classe', '$tipo_classe', '$classificacao', '$conta')"; 
     
     $resultado = mysqli_query($conecta, $sql);  
 

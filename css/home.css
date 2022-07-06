@@ -1,0 +1,17 @@
+.conteudo-cabecalho .cabecalho-centro{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; 
+    /* justify-content: space-between;
+    padding: 36px 16px 80px; */
+    background-color: red;
+}
+
+.conteudo-cabecalho{
+    /* background-color:#29abcc;  */
+    background-color:#2b7483;   
+}
+
+.h1{
+    color: red;
+}
