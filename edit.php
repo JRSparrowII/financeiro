@@ -7,13 +7,13 @@
   }
    
   require_once("./config/conexao.php");
-  $debitos_conta = "SELECT conta FROM plano_contas";
+  $debitos_conta = "SELECT * FROM plano_contas";
   $linha_debitos = mysqli_query($conecta, $debitos_conta);
   if(!$linha_debitos){
     die("Erro no banco");
   }  
   
-  $creditos_conta = "SELECT conta FROM plano_contas";
+  $creditos_conta = "SELECT * FROM plano_contas";
   $linha_creditos = mysqli_query($conecta, $creditos_conta);
   if(!$linha_creditos){
     die("Erro no banco");
@@ -55,7 +55,7 @@
   <button type="button" class="btn btn-outline-dark">Voltar</button>
   </h1>
     
-  <form action = "atualiza_transacoes.php" method="POST">
+  <form action="atualiza_transacoes.php" method="POST">
     <input type="hidden" name="id" value="cadastrar">
 
     <div class="form-group">
@@ -65,9 +65,9 @@
     
     <div class="form-group">
       <label for="debito">Débito:</label>
-      <select name="debito" class="form-control" name="debito" value= "<?php echo $resultado['debito']?>" placeholder = "Tipo da conta debito" required autofocus>
+      <select name="debito" class="form-control" name="debito" placeholder = "Tipo da conta debito" required autofocus>
         <?php while($linha = mysqli_fetch_assoc($linha_debitos)){ ?>
-          <option value = "1">
+          <option <?php if ($linha['id_classe'] ==  $resultado['debito']) { echo "selected";} ?> value="<?php echo $linha['id_classe'] ?>" >
           <?php echo $linha["conta"] ?>
           </option>         
         <?php } ?>                    
@@ -83,7 +83,7 @@
       <label for="credito">Crédito:</label>
       <select name="credito" class="form-control" value= "<?php echo $resultado['credito']?>" placeholder = "Tipo da conta credito" required autofocus>
         <?php while($linha = mysqli_fetch_assoc($linha_creditos)){ ?>
-          <option value = "1">
+          <option value="<?php echo $linha['id_classe'] ?>">
           <?php echo $linha["conta"] ?>
           </option>         
         <?php } ?>                    
@@ -100,7 +100,7 @@
       <textarea type="text" class="form-control" name="historico" value= "<?php echo $resultado['historico']?>" placeholder="Digite o historico da movimentação" rows="6"></textarea>
     </div>
     
-    <input type="hidden" name="id" value="<?php echo $resultado['id_transacao']?>" > 
+    <input type="hidden" name="id_transacao" value="<?php echo $resultado['id_transacao']?>" > 
     <input type= "submit" value = "Salvar Alteração" class="btn btn-primary btn-block" id="atualizar">
   </form>
 

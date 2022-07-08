@@ -2,10 +2,26 @@
     include("./templates/header.php");   
     include_once("./config/conexao.php"); 
 
-    $consulta = "SELECT * FROM  transacoes ORDER BY id_transacao desc";
+    $consulta = "SELECT 
+        id_transacao,
+        data_transacao,
+        p1.conta as conta_debito,
+        valor_debito,
+        p2.conta as conta_credito,
+        valor_credito,
+        historico
+        FROM  transacoes t
+        INNER JOIN plano_contas p1 on p1.id_classe = t.debito
+        INNER JOIN plano_contas p2 on p2.id_classe = t.credito 
+        ORDER BY id_transacao desc";
+
+     
     $resultado = $conecta->query($consulta);
     // print_r($resultado);
-   
+
+    
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -78,9 +94,9 @@
                             echo "<tr>";
                             echo "<td>" .$user_data['id_transacao']."</td>";
                             echo "<td>" .$user_data['data_transacao']."</td>";
-                            echo "<td>" .$user_data['debito']."</td>";
+                            echo "<td>" .$user_data['conta_debito']."</td>";
                             echo "<td>" .$user_data['valor_debito']."</td>";
-                            echo "<td>" .$user_data['credito']."</td>";
+                            echo "<td>" .$user_data['conta_credito']."</td>";
                             echo "<td>" .$user_data['valor_credito']."</td>";
                             echo "<td>" .$user_data['historico']."</td>";
                             echo "<td>
