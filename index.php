@@ -17,11 +17,7 @@
 
      
     $resultado = $conecta->query($consulta);
-    // print_r($resultado);
-
-    
-
-    
+    // print_r($resultado);    
 ?>
 
 <!DOCTYPE html>

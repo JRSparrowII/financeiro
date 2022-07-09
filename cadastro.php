@@ -41,10 +41,16 @@
 </html>
 
 <div class="container">
+  
+    <div class= "btnVoltar">
+      <button id="btnVoltar" type="button" class="btn btn-outline-dark" a hef = "index.php">Voltar</button>
 
-  <h1 id="main-title">Cadastrar Transação
-  <button type="button" class="btn btn-outline-dark" a hef = "index.php">>Voltar</button>
-  </h1>
+    </div>
+    <div class="titulo">  
+      <h1 id="main-title">Cadastrar Transação</h1>
+    </div>
+  
+  
 
   <form action="salvar_transacao.php" method="POST">
     <!-- <input type="hidden" name="submit" value="cadastrar"> -->
@@ -92,5 +98,12 @@
     </div>    
     <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block">   
   </form>
-  <?php include('./templates/footer.php'); ?>
+  
 </div>
+<footer>
+  <div class="footer">
+    <?php include('./templates/footer.php'); ?>
+  </div>
+</footer>
+
+

@@ -6,6 +6,7 @@
     header("Location: login.php");
   }
    
+  // SELECAO DE DADOS PARA O SELECT
   require_once("./config/conexao.php");
   $debitos_conta = "SELECT * FROM plano_contas";
   $linha_debitos = mysqli_query($conecta, $debitos_conta);

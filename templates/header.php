@@ -57,13 +57,14 @@
         <li><a class="nav-link active" href="index.php">Registros</a></li>
         <li><a class="nav-link active" href="cadastro.php">Cadastrar Transação</a></li>              
         <li><a class="nav-link active" href="planocontas.php">Plano de Contas</a></li>
-      </div>
-      <div class="dropdown">
         <button type="button"
           data-bs-toggle="dropdown"
-          class="btn btn-primary dropdown-toggle"          
+          class="btn btn-dark dropdown-toggle"          
           >Relatórios          
         </button>
+      </div>
+      <div class="dropdown">
+        
 
         <div class = "dropdown-menu" aria-labelledby="menu">
           <li><a href="relatorios/balanco.php" class="dropdown-item">Balanço Patrimonial</a></li>

@@ -34,7 +34,31 @@
 }
 
 .container{
-    background-color: lightblue;
+    /* background-color: red; */
     max-height: 800px;
 
+}
+
+.containerheader{
+    display: flex; 
+    min-width: 600px;  
+    width: 100%;
+}
+
+.btnVoltar{
+    margin-top: 25px;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -70px;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }

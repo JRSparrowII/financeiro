@@ -1,7 +1,9 @@
 /* RELATORIOS */
 
-.titulos {
-    text-align: center;
-    color: #BD2130;
-    }
-    
+.esquerda{
+    background-color: blue;
+}
+
+.direita{
+    background-color: aqua;
+}
