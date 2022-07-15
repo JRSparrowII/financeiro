@@ -31,6 +31,9 @@
     
     <div id="grafico1"></div>
 
+
+
+
     <script>
         $(document).ready(function () {           
             $.ajax({
@@ -41,7 +44,25 @@
                 success: function (response) {                                                                                
                     mostrarGrafico(response);                    
                 }
-            });          
+            });
+
+
+            function dadosGraficos(response) {
+                return ( 
+                    response.map(function(val){                                  
+                        return (
+                            
+                                {
+                                    name: val.conta,
+                                    y: parseInt(val.valor), 
+                                }
+                            
+                            
+                        )                    
+                    })   
+                )
+            }
+            
 
             function mostrarGrafico(response){
                 // Create the chart
@@ -93,17 +114,8 @@
                         {
                         name: "Browsers",
                         colorByPoint: true,
-                        data: [
-                            {
-                                name: 'Supermercado',
-                                y: 1000
-                            },
-                            {
-                                name: 'Carro',
-                                y: 3213
-                            }
-
-                        ]                            
+                        data: dadosGraficos(response)
+                            
                             
                         }
                     ],

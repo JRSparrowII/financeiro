@@ -42,13 +42,15 @@
 
 <div class="container">
   
+  <form action="index.php" method="POST">  
     <div class= "btnVoltar">
-      <button id="btnVoltar" type="button" class="btn btn-outline-dark" a hef = "index.php">Voltar</button>
+        <button id="btnVoltar" type="button" class="btn btn-outline-dark" href = "index.php">Voltar</button>
+    </div>
+  </form>
 
-    </div>
-    <div class="titulo">  
-      <h1 id="main-title">Cadastrar Transação</h1>
-    </div>
+  <div class="titulo">  
+    <h1 id="main-title">Cadastrar Transação</h1>
+  </div>
   
   
 
